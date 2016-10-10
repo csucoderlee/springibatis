@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+    <resultMap id="User" class="org.csu.coderlee.domain.user.User">
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="User.selectById" resultMap="User" parameterClass="hashMap">
+        SELECT * FROM user where id = #id#
+    </select>
+</sqlMap>
